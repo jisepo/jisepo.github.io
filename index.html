@@ -7,14 +7,12 @@
             margin: 0;
             display: flex;
             flex-direction: column; /* Stack images vertically */
-            align-items: left; /* Center images horizontally */
-            height: 100vh;
+            align-items: center; /* Center images horizontally */
             background: black;
-            overflow: hidden; /* Prevent scrolling */
         }
         img {
             max-width: 100%; /* Limit width to 100% of the viewport */
-            max-height: 100%; /* Limit height to 100% of the viewport */
+            max-height: 100vh; /* Limit height to 100% of the viewport height */
             object-fit: contain; /* Maintain aspect ratio */
             margin: 0; /* Remove any margin */
         }
