@@ -6,16 +6,15 @@
         body {
             margin: 0;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column; /* Stack images vertically */
+            align-items: left; /* Center images horizontally */
             height: 100vh;
             background: black;
         }
         img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            width: 100%; /* Make images take full width */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: contain; /* Ensure images fit within their container */
         }
     </style>
 </head>
