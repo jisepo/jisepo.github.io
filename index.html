@@ -7,24 +7,29 @@
             margin: 0;
             display: flex;
             flex-direction: column; /* Stack images vertically */
-            align-items: left; /* Center images horizontally */
-            background: black;
+            align-items: flex-start; /* Align images to the left */
+            background: black; /* Keep the background black */
+            overflow: hidden; /* Prevent scrolling during loading */
         }
         img {
             max-width: 100%; /* Limit width to 100% of the viewport */
             max-height: 100vh; /* Limit height to 100% of the viewport height */
             object-fit: contain; /* Maintain aspect ratio */
             margin: 0; /* Remove any margin */
+            display: none; /* Initially hide images */
+        }
+        img.loaded {
+            display: block; /* Show images once they are loaded */
         }
     </style>
 </head>
 <body>
-    <img src="1.jpeg" alt="Image 1" loading="lazy" />
-    <img src="2.jpeg" alt="Image 2" loading="lazy" />
-    <img src="3.jpeg" alt="Image 3" loading="lazy" />
-    <img src="4.jpeg" alt="Image 4" loading="lazy" />
-    <img src="5.jpeg" alt="Image 5" loading="lazy" />
-    <img src="6.jpeg" alt="Image 6" loading="lazy" />
-    <img src="7.jpeg" alt="Image 7" loading="lazy" />
+    <img src="1.jpeg" alt="Image 1" loading="lazy" onload="this.classList.add('loaded')" />
+    <img src="2.jpeg" alt="Image 2" loading="lazy" onload="this.classList.add('loaded')" />
+    <img src="3.jpeg" alt="Image 3" loading="lazy" onload="this.classList.add('loaded')" />
+    <img src="4.jpeg" alt="Image 4" loading="lazy" onload="this.classList.add('loaded')" />
+    <img src="5.jpeg" alt="Image 5" loading="lazy" onload="this.classList.add('loaded')" />
+    <img src="6.jpeg" alt="Image 6" loading="lazy" onload="this.classList.add('loaded')" />
+    <img src="7.jpeg" alt="Image 7" loading="lazy" onload="this.classList.add('loaded')" />
 </body>
 </html>
