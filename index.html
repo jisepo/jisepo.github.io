@@ -10,11 +10,13 @@
             align-items: left; /* Center images horizontally */
             height: 100vh;
             background: black;
+            overflow: hidden; /* Prevent scrolling */
         }
         img {
-            width: 100%; /* Make images take full width */
-            height: auto; /* Maintain aspect ratio */
-            object-fit: contain; /* Ensure images fit within their container */
+            max-width: 100%; /* Limit width to 100% of the viewport */
+            max-height: 100%; /* Limit height to 100% of the viewport */
+            object-fit: contain; /* Maintain aspect ratio */
+            margin: 0; /* Remove any margin */
         }
     </style>
 </head>
