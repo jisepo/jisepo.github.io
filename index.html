@@ -1,22 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            color: #FFF;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Maintain aspect ratio */
+            opacity: 0; /* Hide all images initially */
+            transition: opacity 0.5s ease; /* Smooth transition */
+        }
+        img.active {
+            opacity: 1; /* Show the active image */
+        }
+    </style>
 </head>
-<style>
-    body {
-        margin: 0;
-        background: #000;
-        color: #FFF;}
-    img {
-    height: 100vh; }/* Maintain aspect ratio */
-</style>
-    <body>
-Jisepo Art<br>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br> 
-<img src="1.jpeg">
-<img src="2.jpeg">
-<img src="3.jpeg">
-<img src="4.jpeg">
-    </body>
+<body>
+    <div class="image-container">
+        <img src="1.jpeg" class="active">
+        <img src="2.jpeg">
+        <img src="3.jpeg">
+        <img src="4.jpeg">
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.image-container img');
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
+            images[currentIndex].classList.add('active');
+        }
+
+        // Change image every 3 seconds
+        setInterval(showNextImage, 3000);
+    </script>
+</body>
 </html>
